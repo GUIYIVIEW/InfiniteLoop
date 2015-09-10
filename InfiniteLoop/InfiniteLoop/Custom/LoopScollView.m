@@ -9,16 +9,18 @@
 #import "LoopScollView.h"
 #import "UIImageView+WebCache.h"
 
+#define PageCtlWidth  40
+#define PageCtlHeight 20
+
 @interface LoopScollView ()<UIScrollViewDelegate>
 
-@property (nonatomic,assign)int scrollPageCount;/**<自动滚动图标志*/
-@property (nonatomic,strong)NSTimer *timer;/**<定时器属性*/
-@property (nonatomic,strong)NSArray *myPicArr;/**< 轮播图数组*/
+@property (nonatomic,assign)int scrollPageCount;
+@property (nonatomic,strong)NSTimer *timer;
+@property (nonatomic,strong)NSArray *myPicArr;
 @property (nonatomic,strong)UIScrollView *pictureScrollView;
-@property (nonatomic,strong)UIPageControl *pageControl;/**< 小圆点*/
+@property (nonatomic,strong)UIPageControl *pageControl;
 
 @end
-
 
 
 
@@ -27,8 +29,7 @@
 -(instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
-    if (self)
-    {
+    if (self) {
         self.userInteractionEnabled = YES;
         self.scrollPageCount = 0;
         [self pictureScrollView];
@@ -54,7 +55,7 @@
 -(UIPageControl *)pageControl
 {
     if (_pageControl == nil) {
-        _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(self.bounds.size.width - 50, self.bounds.size.height - 20, 40, 20)];
+        _pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(self.bounds.size.width - PageCtlWidth, self.bounds.size.height - PageCtlHeight, PageCtlWidth, PageCtlHeight)];
         _pageControl.numberOfPages = self.myPicArr.count;
         _pageControl.pageIndicatorTintColor = [UIColor darkGrayColor];
         _pageControl.currentPageIndicatorTintColor = [UIColor lightGrayColor];
@@ -68,7 +69,7 @@
     self.myPicArr = [NSArray arrayWithArray:picArr];
     
     //轮播图不为0时
-    if ( self.myPicArr.count != 0)
+    if ( [self.myPicArr count] > 0)
     {
         [self pageControl];
         
@@ -78,22 +79,26 @@
         {
             UIImageView *singlePicture = [[UIImageView alloc] initWithFrame:CGRectMake(self.bounds.size.width * i, 0, self.bounds.size.width, self.bounds.size.height)];
             singlePicture.contentMode = UIViewContentModeScaleAspectFill;
+            singlePicture.clipsToBounds = YES;
             
             if (i == 0)
             {
                 NSString *imgUrl = [self.myPicArr lastObject];
+                //如果传进来的是Model数组，在此取出model里图片的地址
                 [singlePicture sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
                 singlePicture.tag = self.myPicArr.count - 1;
             }
             else if (i == self.myPicArr.count + 1)
             {
                 NSString *imgUrl = [self.myPicArr firstObject];
+                //如果传进来的是Model数组，在此取出model里图片的地址
                 [singlePicture sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
                 singlePicture.tag = 0;
             }
             else
             {
                 NSString *imgUrl = self.myPicArr[i - 1];
+                //如果传进来的是Model数组，在此取出model里图片的地址
                 [singlePicture sd_setImageWithURL:[NSURL URLWithString:imgUrl]];
                 singlePicture.tag = i - 1;
             }
@@ -117,6 +122,7 @@
 
 - (void)tapPicAction:(UIGestureRecognizer *)gest
 {
+    // 取出model : [self.myPicArr objectAtIndex:gest.view.tag]
     if ([self.delegate respondsToSelector:@selector(tapScrollPicture:)]) {
         [self.delegate tapScrollPicture:(int)gest.view.tag];
     }
@@ -136,7 +142,7 @@
     
 }
 
-#pragma mark - 轮播图scrollView代理
+#pragma mark - scrollView
 -(void)scrollViewDidEndDecelerating:(UIScrollView *)scrollView
 {
     //偏离位置
@@ -184,7 +190,7 @@
 /**添加一个定时器*/
 - (void)startTimer
 {
-    self.timer = [NSTimer timerWithTimeInterval:3.0f target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
+    self.timer = [NSTimer timerWithTimeInterval:5.0f target:self selector:@selector(nextPage) userInfo:nil repeats:YES];
     
     [[NSRunLoop mainRunLoop] addTimer:self.timer forMode:NSRunLoopCommonModes];
 }

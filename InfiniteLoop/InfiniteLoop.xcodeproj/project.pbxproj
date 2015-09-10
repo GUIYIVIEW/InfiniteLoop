@@ -7,9 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		714332121BA1231400DD348D /* MainTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = 714332111BA1231400DD348D /* MainTableView.m */; };
+		714332141BA12D0700DD348D /* looper.gif in Resources */ = {isa = PBXBuildFile; fileRef = 714332131BA12D0700DD348D /* looper.gif */; };
 		7191568D1BA014FA003C2C19 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191568C1BA014FA003C2C19 /* main.m */; };
 		719156901BA014FA003C2C19 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7191568F1BA014FA003C2C19 /* AppDelegate.m */; };
-		719156931BA014FA003C2C19 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 719156921BA014FA003C2C19 /* ViewController.m */; };
 		719156961BA014FA003C2C19 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 719156941BA014FA003C2C19 /* Main.storyboard */; };
 		719156981BA014FA003C2C19 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 719156971BA014FA003C2C19 /* Images.xcassets */; };
 		7191569B1BA014FA003C2C19 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 719156991BA014FA003C2C19 /* LaunchScreen.xib */; };
@@ -44,13 +45,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		714332101BA1231400DD348D /* MainTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainTableView.h; sourceTree = "<group>"; };
+		714332111BA1231400DD348D /* MainTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainTableView.m; sourceTree = "<group>"; };
+		714332131BA12D0700DD348D /* looper.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = looper.gif; sourceTree = "<group>"; };
 		719156871BA014FA003C2C19 /* InfiniteLoop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InfiniteLoop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7191568B1BA014FA003C2C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7191568C1BA014FA003C2C19 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7191568E1BA014FA003C2C19 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7191568F1BA014FA003C2C19 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		719156911BA014FA003C2C19 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		719156921BA014FA003C2C19 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		719156951BA014FA003C2C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		719156971BA014FA003C2C19 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		7191569A1BA014FA003C2C19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 		7191567E1BA014FA003C2C19 = {
 			isa = PBXGroup;
 			children = (
+				714332131BA12D0700DD348D /* looper.gif */,
 				719156891BA014FA003C2C19 /* InfiniteLoop */,
 				719156A31BA014FA003C2C19 /* InfiniteLoopTests */,
 				719156881BA014FA003C2C19 /* Products */,
@@ -135,8 +138,8 @@
 				719156B11BA015BC003C2C19 /* Resources */,
 				7191568E1BA014FA003C2C19 /* AppDelegate.h */,
 				7191568F1BA014FA003C2C19 /* AppDelegate.m */,
-				719156911BA014FA003C2C19 /* ViewController.h */,
-				719156921BA014FA003C2C19 /* ViewController.m */,
+				714332101BA1231400DD348D /* MainTableView.h */,
+				714332111BA1231400DD348D /* MainTableView.m */,
 				719156941BA014FA003C2C19 /* Main.storyboard */,
 				719156971BA014FA003C2C19 /* Images.xcassets */,
 				719156991BA014FA003C2C19 /* LaunchScreen.xib */,
@@ -316,6 +319,7 @@
 			files = (
 				719156961BA014FA003C2C19 /* Main.storyboard in Resources */,
 				7191569B1BA014FA003C2C19 /* LaunchScreen.xib in Resources */,
+				714332141BA12D0700DD348D /* looper.gif in Resources */,
 				719156D61BA0190B003C2C19 /* LICENSE in Resources */,
 				719156981BA014FA003C2C19 /* Images.xcassets in Resources */,
 			);
@@ -337,13 +341,13 @@
 			files = (
 				719156E31BA0190B003C2C19 /* UIImageView+HighlightedWebCache.m in Sources */,
 				719156E21BA0190B003C2C19 /* UIImage+MultiFormat.m in Sources */,
+				714332121BA1231400DD348D /* MainTableView.m in Sources */,
 				719156DD1BA0190B003C2C19 /* SDWebImageDownloaderOperation.m in Sources */,
 				719156B41BA015E3003C2C19 /* LoopScollView.m in Sources */,
 				719156DA1BA0190B003C2C19 /* SDWebImageCompat.m in Sources */,
 				719156E51BA0190B003C2C19 /* UIView+WebCacheOperation.m in Sources */,
 				719156E11BA0190B003C2C19 /* UIImage+GIF.m in Sources */,
 				719156DF1BA0190B003C2C19 /* SDWebImagePrefetcher.m in Sources */,
-				719156931BA014FA003C2C19 /* ViewController.m in Sources */,
 				719156D71BA0190B003C2C19 /* README.md in Sources */,
 				719156DC1BA0190B003C2C19 /* SDWebImageDownloader.m in Sources */,
 				719156E01BA0190B003C2C19 /* UIButton+WebCache.m in Sources */,
@@ -548,6 +552,7 @@
 				719156AC1BA014FA003C2C19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		719156AD1BA014FA003C2C19 /* Build configuration list for PBXNativeTarget "InfiniteLoopTests" */ = {
 			isa = XCConfigurationList;
@@ -556,6 +561,7 @@
 				719156AF1BA014FA003C2C19 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

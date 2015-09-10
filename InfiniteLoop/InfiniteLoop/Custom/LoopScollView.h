@@ -11,7 +11,7 @@
 
 @protocol LoopScollViewDelegate <NSObject>
 
-/** 点击了滚动图*/
+/**点击了滚动图*/
 - (void)tapScrollPicture:(int)pictureTag;
 
 @end
@@ -21,7 +21,7 @@
 
 @property (nonatomic,weak)id<LoopScollViewDelegate> delegate;
 
-/** 传进图片数组*/
+/**传进图片数组*/
 - (void)setPictureArray:(NSMutableArray *)picArr;
 
 
